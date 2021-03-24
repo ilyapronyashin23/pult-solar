@@ -346,34 +346,25 @@ Main_Printf( RamDataContainer_t* ramdata )
 {
 	static CurrentMode_t Prev_Mode = STOP;
 	
-	if (NoAnswer.u8_Count > 50)
-	{
-		if (!NoAnswer.b_Res)
-		{
+	if (NoAnswer.u8_Count > 50) {
+		if (!NoAnswer.b_Res) {
 			NoAnswer.b_Res = true;
+			p_ram_list->p_now = p_ram_list->p_ram_main;
 			Menu_Step(NO485);
 		}
-		
 		ramdata->Blank_Menu = true;
-	}
-	else
-	{
-		if (ramdata->Blank_Menu)
-		{
-			
+	} else {
+		if (ramdata->Blank_Menu) {
 			ramdata->Blank_Menu = false;
-			//Menu_Step(Table.Page0.Mode);
-		}
-		else
-		{
-			
-			if (Table.Page0.Mode != Prev_Mode)
-			{
-				
-				//Menu_Step(Table.Page0.Mode);
+			p_ram_list->p_now = p_ram_list->p_ram_parview;
+			//Menu_Step(MAINSCREEN);
+		} 
+		/*else {
+			if (Table.Page0.Mode != Prev_Mode) {
+				Menu_Step(MAINSCREEN);
 				Prev_Mode = Table.Page0.Mode;
 			}
-		}
+		}*/
 	}
 	
 	if (ramdata->pData->Type == DATA_TYPE_1)

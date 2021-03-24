@@ -1341,6 +1341,10 @@ Menu_Step(CurrentMode_t mode)
 			Navigation_Jump(p_ram_list, 4);
 			break;
 			
+		case (MAINSCREEN):
+			Navigation_Jump(p_ram_list, 1);
+			break;
+			
 		default:
 			break;
 	}

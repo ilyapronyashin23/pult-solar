@@ -115,10 +115,11 @@ DateTime_t;
 typedef enum
 {
 	CM_UNK = 0,
-	RUN,
-	STOP,
-	FAULT,
-	NO485
+	RUN =1,
+	STOP=2,
+	FAULT=3,
+	NO485=4,
+	MAINSCREEN=5
 }
 CurrentMode_t;
 
