@@ -1,0 +1,85 @@
+#ifndef _MODBUSPROTOCOLTABLE_H_
+#define _MODBUSPROTOCOLTABLE_H_
+
+#define INTERFACE_BOARD_ADDR 1
+
+#define MODBUS_PAGE_0 0
+#define MODBUS_PAGE_1 1
+
+#define MODBUS_REG_TIME1 			0
+#define MODBUS_REG_TIME2 			1
+#define MODBUS_REG_DATE1 			2
+#define MODBUS_REG_DATE2 			3
+#define MODBUS_REG_0 				4
+#define MODBUS_REG_1 				5
+#define MODBUS_REG_2 				6
+#define MODBUS_REG_INVERTER 		7
+#define MODBUS_REG_MPPT1 			8
+#define MODBUS_REG_MPPT2 			9
+
+#define MODBUS_STARTSTOP 			10
+#define MODBUS_ADC_TSTB 			11	// A0:	tempBattery		TSTB	v
+#define MODBUS_ADC_TRAD 			12	// A2:	tempCooler		TRAD	v
+#define MODBUS_ADC_220VN			13	// A3:	voltageLoad		~220VN
+#define MODBUS_ADC_ISTBN			14	// A4:	currentBattery	ISTBN
+#define MODBUS_ADC_TTR 				15	// A5:	tempTransformer	TTR		v	
+#define MODBUS_ADC_STBN 			16	// A6:  VoltageBattery	+STBN
+#define MODBUS_ADC_IINVN			17	// A7:	currentBridge	IINVN
+#define MODBUS_ADC_I220N 			18	// B0:	currentLoad		I220N
+#define MODBUS_ADC_IO2N				19	// B1:	currentMPPT2	IO2N
+
+#define MODBUS_ADC_SB2N					20	// B4:	voltageMPPT2	+SB2N
+#define MODBUS_ADC_SB1N 				21	// B5:	voltageMPPT1	+SB1N
+#define MODBUS_ADC_IO1N 				22	// B6:	currentMPPT1	IO1N
+#define MODBUS_SOLBAT_CH1_U_MPP			23
+#define MODBUS_SOLBAT_CH1_U_XX			24
+#define MODBUS_SOLBAT_CH1_NUM_SERIAL	25
+#define MODBUS_SOLBAT_CH1_NUM_PARAL		26
+#define MODBUS_SOLBAT_CH1_I_KZ			27
+#define MODBUS_SOLBAT_CH1_I_MPP			28
+#define MODBUS_SOLBAT_CH1_MODE			29
+
+#define MODBUS_REG_DEBUG_TEMP0			30
+#define MODBUS_REG_DEBUG_TEMP1			31
+#define MODBUS_REG_DEBUG_TEMP2			32
+
+#define MODBUS_INVERTER_UOUT_SET		33
+#define MODBUS_REG_DEBUG_TEMP3			34
+#define MODBUS_RELAY_P2					35
+#define MODBUS_RELAY_P3					36
+
+#define MODBUS_SOLBAT_CH2_U_MPP			37
+#define MODBUS_SOLBAT_CH2_U_XX			38
+#define MODBUS_SOLBAT_CH2_NUM_SERIAL	39
+#define MODBUS_SOLBAT_CH2_NUM_PARAL		40
+#define MODBUS_SOLBAT_CH2_I_KZ			41
+#define MODBUS_SOLBAT_CH2_I_MPP			42
+#define MODBUS_SOLBAT_CH2_MODE			43
+
+#define MODBUS_BAT_CELL_TYPE			44
+#define MODBUS_BAT_CELL_U_NOM			45
+#define MODBUS_BAT_CELL_U_FCH			46
+#define MODBUS_BAT_CELL_NUM_IN_BAT		47
+#define MODBUS_BAT_NUM_SER_BAT			48
+#define MODBUS_BAT_CAPACITY				49
+
+
+/* Не работают*/
+
+#define MODBUS_LEADBAT_TYPE			32
+#define MODBUS_LEADBAT_CAPACITY		33
+#define MODBUS_LEADBAT_U_CYCLE		34
+#define MODBUS_LEADBAT_U_BUF		35
+#define MODBUS_LEADBAT_U_DISCHARGE	36
+#define MODBUS_LEADBAT_I_CHARGE_MAX	37
+#define MODBUS_LEADBAT_I_CHARGE_BUF	38
+#define MODBUS_LEADBAT_TKR			39
+
+#define MODBUS_MPPT_TMM				40
+#define MODBUS_MPPT_TYPE_STAB		40
+#define MODBUS_MPPT_SCAN_PER		40
+#define MODBUS_MPPT_PARAL			40
+
+
+
+#endif

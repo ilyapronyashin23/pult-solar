@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Avr Studio 4 files
+*.aps
+*.aws
+default/
+*.txt
