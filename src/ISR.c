@@ -26,8 +26,6 @@ ISR
 	{
 		Cnt = 0;
 		
-		
-		
 
 		//if (p_ram_list->p_now->Msg.Tx.Reg == MODBUS_STARTSTOP)
 			

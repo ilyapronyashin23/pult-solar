@@ -77,31 +77,29 @@ void	Modbus_MSP_Init(void)
 
 
 void
-Send_Switch( RamList_t* ram_list )
-{
-	switch (Next_Send_Function)
-	{
-		Timer_Stop();
-		Timer_Reset();
-		Clear_Struct(&dev);
-		dev.Modbus.Status = READY_START_BYTE;
-		
+Send_Switch( RamList_t* ram_list ) {
+	
+	Timer_Stop();
+	Timer_Reset();
+	Clear_Struct(&dev);
+	dev.Modbus.Status = READY_START_BYTE;
+	
+	
+	switch (Next_Send_Function) {
 		case F_X04:
-		{
 			Send_X04();
-			
-			break;
-		}
-		
+		break;
 		case F_X10:
-		{
 			Send_X10(ram_list);
 			Next_Send_Function = F_X04;
-			break;
-		}
-		
-		dev.Modbus.Status = READY_START_BYTE;
+		break;
+		default:
+			return;
+		break;
 	}
+	
+	// ok request
+	PORTD ^= 1<<7;
 }
 /**/
 
@@ -223,6 +221,8 @@ void 	Master_Receive(void* device, uint8_t rdata)
 		{
 			//ïåðâîäèì â Wait rx
 			//ÇÀÏÓÑÊÀÅÌ ÒÈÌÅÐ
+			
+			PORTD ^= 1<<6;
 			
 			ldev->Modbus.WAIT_SLAVE_ANSWER 	= true;
 			ldev->Modbus.Status 			= READY_NEXT_BYTE;
