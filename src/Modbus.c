@@ -99,7 +99,7 @@ Send_Switch( RamList_t* ram_list ) {
 	}
 	
 	// ok request
-	PORTD ^= 1<<7;
+	//PORTD ^= 1<<7;
 }
 /**/
 
@@ -222,7 +222,7 @@ void 	Master_Receive(void* device, uint8_t rdata)
 			//ïåðâîäèì â Wait rx
 			//ÇÀÏÓÑÊÀÅÌ ÒÈÌÅÐ
 			
-			PORTD ^= 1<<6;
+			//PORTD ^= 1<<6;
 			
 			ldev->Modbus.WAIT_SLAVE_ANSWER 	= true;
 			ldev->Modbus.Status 			= READY_NEXT_BYTE;

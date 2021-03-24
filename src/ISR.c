@@ -32,24 +32,22 @@ ISR
 		
 		//_delay_ms(5);
 		
-		if (p_ram_list->p_now == p_ram_list->p_ram_main){
+		/*if (p_ram_list->p_now == p_ram_list->p_ram_main){
 			PORTD ^= 1<<5;
 			PORTD &= ~(1<<0);
 		} else if (p_ram_list->p_now == p_ram_list->p_ram_parview){
 			PORTD ^= 1<<0;
 			PORTD &= ~(1<<5);
-		}
+		}*/
 			
 		
 		
-		/*var0 ^= (bool)1;
+		var0 ^= (bool)1;
 		
 		if (var0){
-			p_ram_list->p_now = p_ram_list->p_ram_main;
+			dev.Modbus.WAIT_SLAVE_ANSWER = false;
+			Send_Switch(p_ram_list);
 		}
-		else{
-			p_ram_list->p_now = p_ram_list->p_ram_parview;
-		}*/
 		
 		
 		GetButtonCodes(ButtonCodes);
@@ -57,8 +55,7 @@ ISR
 		
 		Update_Screen(p_ram_list);
 		
-		dev.Modbus.WAIT_SLAVE_ANSWER = false;
-		Send_Switch(p_ram_list);
+		
 	}
 	else Cnt++;
 }
