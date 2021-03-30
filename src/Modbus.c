@@ -380,7 +380,7 @@ void	Master_Timer_Compare(void* device)
 				for (i = 0; i < ldev->Modbus.BYTES_NUMBER; i++)
 					ldev->Received_Data.p_Bytes[i] = ldev->Modbus.p_Temp_Data[i];
 				
-				
+				PORTD ^= 1<<7;
 				
 				if (MASTER_Process_Receive(ldev))
 				{
@@ -403,7 +403,7 @@ void	Master_Timer_Compare(void* device)
 			{
 				for (i = 0; i < MAX_ALLOWED_BYTES_NUM_SLAVE_RX_X10; i++)	ldev->Received_Data.p_Bytes[i] = 0;
 				ldev->Received_Data.ERROR_CODE = BYTES_MISSING;
-				
+				PORTD ^= 1<<6;
 				User_Callback(false);
 			}
 		}
