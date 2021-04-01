@@ -297,7 +297,7 @@ PGM_Data_2[DATA2_MENU_DIM_X][DATA2_MENU_DIM_Y] PROGMEM =
 			.Value = 
 			{
 				//.Type = U16nP,
-				.Type = S16nP,
+				.Type = S16,
 				.Units = UNITS_VOLT,
 				.pvData = &(Table.Page0.Reg220VN),
 			},
